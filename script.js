@@ -6,6 +6,13 @@ function storeData() {
     var userPassword = document.getElementById("password").value;
     var userAge = document.getElementById("age").value;
     var userName = document.getElementById("username").value;
+    // check if email is already registered
+    for (let i = 0; i < arrOfUserObject.length; i++) {
+        if (userEmail === arrOfUserObject[i].email) {
+            alert("This email is already registered. Please use a different email.");
+            return;
+        }
+    }
     count++;
     
     arrOfUserObject.push({email: userEmail, password: userPassword, age: userAge, username: userName, Id: count});
